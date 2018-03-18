@@ -65,7 +65,17 @@ public class Popcorn {
 			e.printStackTrace();
 		}
 	}
-	
+	public static void main(String[] args) {
+		
+		Microwave micro = new Microwave();
+		Popcorn pop = new Popcorn("butter");
+		micro.putInMicrowave(pop);
+		micro.setTime(3);
+		micro.startMicrowave();
+		pop.applyHeat();
+		pop.pause();
+		
+	}
 }
 
 
