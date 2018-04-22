@@ -1,6 +1,6 @@
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,14 +11,13 @@ import javax.swing.JTextField;
 public class BinaryConverter implements ActionListener {
 	public static void main(String[] args) {
 		BinaryConverter a = new BinaryConverter();
-
 	}
-
+JTextField field = new JTextField(20);
 	BinaryConverter() {
 		JFrame frame = new JFrame("Binary Converter");
 		JPanel panel = new JPanel();
 		JLabel label = new JLabel();
-		JTextField field = new JTextField(20);
+		
 		Dimension SMALL = new Dimension(100, 100);
 		frame.setVisible(true);
 		panel.setVisible(true);
@@ -55,6 +54,14 @@ public class BinaryConverter implements ActionListener {
 			JOptionPane.showMessageDialog(null, "Enter a binary, silly!!!");
 			return "-";
 		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		String num = field.getText();
+		String ans = convert(num);
+		System.out.println(ans);
 	}
 
 }
